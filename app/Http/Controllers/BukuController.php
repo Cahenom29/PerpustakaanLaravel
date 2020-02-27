@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\Buku;
 
 class BukuController extends Controller
 {
@@ -59,7 +59,7 @@ class BukuController extends Controller
     public function show($id)
     {
         $buku  = Buku::findOrFail($id);
-        return view('admin.buku.detail',['bukus' => $buku]);
+        return view('admin.buku.detail', ['bukus' => $buku]);
     }
 
     /**

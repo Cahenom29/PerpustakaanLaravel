@@ -89,69 +89,69 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Data Buku </h1>
+          <h1 class="h3 mb-0 text-gray-800">Detail Buku {{ $bukus->judul }}</h1>
           
-          @if ($errors->any())
-          <div class="alert alert-danger">
-             <ul>
-                 @foreach ($errors->all() as $error)
-                     <li>{{ $error }}</li>
-                 @endforeach
-             </ul>
           </div>
-              
-          @endif
-          </div>
-
-         
-
-          <!-- Content Row -->
-          <div class="row">
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table-bordered" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                        <th>Judul</th>
-                        <th>Pengarang</th>
-                        <th>Penerbit</th>
-                        <th>isbn</th>
-                        <th>tahun Terbit</th>
-                        <th>Tempat</th>
-                        <th>stok</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                   @foreach ($bukus as $buku)
-                   <tr>
-                   <td>{{ $buku->judul }}</td>
-                   <td>{{ $buku->pengarang }}</td>
-                   <td>{{ $buku->penerbit }}</td>
-                   <td>{{ $buku->isbn }}</td>
-                   <td>{{ $buku->tahun_terbit }}</td>
-                   <td>{{ $buku->tempat }}</td>
-                   <td>{{ $buku->stok }}</td>
-                  
-                    <td>
+      
+           @if ($errors->any())
+           <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+           </div>
+               
+           @endif
+      
+           <div class="card shadow">
+              <div class="card-body">
+                  <table class="table table-bordered">
+                      <tr>
+                          <th>ID</th>
+                          <td>{{  $bukus->id   }}</td>                  
+                      </tr>
+      
+                      <tr>
+                          <th>Judul Buku</th>
+                          <td>{{   $bukus->judul   }}</td>
+                      </tr>
+                      
+                      <tr>
+                          <th>Pengarang</th>
+                          <td>{{  $bukus->pengarang  }}</td>
+                      </tr>
+      
+                      <tr>
+                          <th>Penerbit</th>
+                          <td>{{  $bukus->penerbit   }}</td>
+                      </tr>
+      
+                      <tr>
+                          <th>ISBN</th>
+                          <td>{{  $bukus->isbn   }}</td>
+                      </tr>
+      
+                      <tr>
+                          <th>Tahun Terbit</th>
+                          <td>{{  $bukus->tahun_terbit   }}</td>
+                      </tr>
+                      
+                      <tr>
+                          <th>Tempat</th>
+                          <td>Rak {{  $bukus->tempat   }}</td>
+                      </tr>
+      
+                      <tr>
+                          <th>Jumlah Stok</th>
+                          <td>{{  $bukus->stok   }}</td>
+                      </tr>
+      
                    
-                        
-                 
-                    </td>
-                    </tr>
-                   @empty
-                    <tr>
-                        <td colspan="7" class="text-center">
-                            Data Kosong
-                        </td>
-                    </tr>
-                   @endforelse
-                </tbody>
-                </table>
+      
+                  </table>
               </div>
-            </div>
-          </div>
-   
+           </div>
         </div>
         <!-- /.container-fluid -->
   

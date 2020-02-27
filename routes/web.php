@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/buku/delete/{id}','BukuController@destroy')->name('delete');
     Route::put('/buku/update/{id}', 'BukuController@update')->name('update');
     Route::get('/buku/edit/{id}', 'BukuController@edit');
-    Route::get('/buku/detail/{id}', 'BukuController@show');
+    Route::get('/buku/detail/{id}', 'BukuController@show')->name('detailbuku');
 
 
 });
